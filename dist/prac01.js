@@ -5,6 +5,7 @@ const todo = {
     priority: 3, // priority = "..." ではない点に要注意
 };
 console.log(`Todo 1 => ${todo.name}（優先度:${todo.priority})`);
+console.log(JSON.stringify(todo, null, 2));
 /*
 // Date型の変数 deadline の宣言と初期化
 let deadline: Date = new Date(2024, 10, 2, 11, 45);
