@@ -1,11 +1,95 @@
 export {};
+import { date2str } from "./utils/date2str"; // 関数date2strをインポート
+
+const deadline: Date = new Date(2024, 10, 2, 11, 45);
+const cratedAt: Date = new Date(); // 引数なしで現在日時を取得
+
+let str = `期限 ${date2str(deadline)} (登録日 ${date2str(cratedAt)})`;
+console.log(str);
+
+
+/*
+const deadline: Date = new Date(2024, 10, 2, 11, 45);
+const cratedAt: Date = new Date(); // 引数なしで現在日時を取得
+
+const dlYear = deadline.getFullYear();
+const dlMonth = String(deadline.getMonth() + 1).padStart(2, "0");
+const dlDay = String(deadline.getDate()).padStart(2, "0");
+const dlHours = String(deadline.getHours()).padStart(2, "0");
+const dlMinutes = String(deadline.getMinutes()).padStart(2, "0");
+
+const caYear = cratedAt.getFullYear();
+const caMonth = String(cratedAt.getMonth() + 1).padStart(2, "0");
+const caDay = String(cratedAt.getDate()).padStart(2, "0");
+const caHours = String(cratedAt.getHours()).padStart(2, "0");
+const caMinutes = String(cratedAt.getMinutes()).padStart(2, "0");
+
+const str =
+  `期限 ${dlYear}/${dlMonth}/${dlDay} ${dlHours}:${dlMinutes} ` +
+  `(登録日 ${caYear}/${caMonth}/${caDay} ${caHours}:${caMinutes})`;
+console.log(str);
+*/
+
+
+
+/*let name: string = "TypeScript";  
+let priority: number = 3;
+*/
+
+/*
+// Date型の変数 deadline の宣言と初期化
+let deadline: Date = new Date(2024, 10, 2, 11, 45);
+
+//deadlineの内容を yyyy/mm/dd hh:mm:ss の形式でコンソールに
+//出力する。ここでは外部ライブラリを使用しない
+const year = deadline.getFullYear();
+const month = String(deadline.getMonth() + 1).padStart(2, '0'); // 月は0から始まるため +1
+const day = String(deadline.getDate()).padStart(2, '0');
+const hours = String(deadline.getHours()).padStart(2, '0');
+const minutes = String(deadline.getMinutes()).padStart(2, '0');
+
+console.log(`${year}/${month}/${day} ${hours}:${minutes}`);
+*/
+
+/*
+const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+console.log(`Timezone: ${timeZone}`);
+*/
+
+
+
+
+
+
+/*
 const todo = {
+  name: "TypeScriptの勉強",
+  priority: 3,
+  isDone: false,
+  deadline: new Date(2024, 9, 11, 9, 45),
+};
+*/
+
+
+/*
+console.log(`name の型は ${typeof name} です`);
+console.log(`priority の型は ${typeof priority} です`);
+*/
+
+/*name = 4649;  エラーになる
+
+priority = "High"; エラーになる 
+*/
+
+
+/*const todo = {
   name: "TypeScriptの勉強", // name = "..." ではない点に要注意
   priority: 3, // priority = "..." ではない点に要注意
 };
 console.log(`Todo 1 => ${todo.name}（優先度:${todo.priority})`);
 
 console.log(JSON.stringify(todo, null, 2));
+*/
 
 /*
 // Date型の変数 deadline の宣言と初期化
