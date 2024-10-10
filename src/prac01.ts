@@ -1,12 +1,53 @@
 export {};
-import { date2str } from "./utils/date2str"; // 関数date2strをインポート
+
+import dayjs from "dayjs";
+import 'dayjs/locale/ja'; // 日本語ロケールをインポート
+import weekday from 'dayjs/plugin/weekday';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+
+dayjs.locale('ja'); // 日本語ロケールを使用
+dayjs.extend(weekday);
+dayjs.extend(customParseFormat);
+
+const dtFmt = "YYYY/MM/DD(ddd) HH:mm";
+const deadline: Date = new Date(2024, 10, 2, 11, 45);
+const cratedAt: Date = new Date(); // 引数なしで現在日時を取得
+
+//期限 2024/11/02(土) 11:45(登録日 2024/10/08(火) 14:58)のような出力を得たい
+const str =
+  `期限 ${dayjs(deadline).format(dtFmt)}` +
+  `(登録日 ${dayjs(cratedAt).format(dtFmt)})`;
+console.log(str);
+
+
+/*
+const str =
+  `期限 ${dayjs(deadline).format(dtFmt)}` +
+  `(登録日 ${dayjs(cratedAt).format(dtFmt)})`;
+console.log(str);
+*/
+
+/*
+import dayjs from "dayjs"; // dayjsのインポート
+
+const deadline: Date = new Date(2024, 10, 2, 11, 45);
+const cratedAt: Date = new Date(); // 引数なしで現在日時を取得
+
+const str =
+  `期限 ${dayjs(deadline).format("YYYY/MM/DD HH:mm")}` +
+  `(登録日 ${dayjs(cratedAt).format("YYYY/MM/DD HH:mm")})`;
+console.log(str);
+*/
+
+/*
+import { date2str } from "./utils/date2str";
 
 const deadline: Date = new Date(2024, 10, 2, 11, 45);
 const cratedAt: Date = new Date(); // 引数なしで現在日時を取得
 
 let str = `期限 ${date2str(deadline)} (登録日 ${date2str(cratedAt)})`;
 console.log(str);
-
+*/
 
 /*
 const deadline: Date = new Date(2024, 10, 2, 11, 45);
